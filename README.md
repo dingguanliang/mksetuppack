@@ -1,4 +1,4 @@
-#Project name: make setup package
+# Project name: make setup package
 
 ---
 
@@ -14,7 +14,8 @@
 
 ---
 
-##usage:
+## usage:
+
 step1: pack setup package.
 ```
 ./build.sh <EULA file path> <target directry path>
@@ -32,7 +33,8 @@ step3: run setup.bin in target host.
 
 ---
 
-##example:
+## example:
+
 step1: modify xsetup.sh file.
 ```
 ┌john@ubuntu ~/t/mksetuppack
