@@ -1,48 +1,48 @@
-[**中文版本**](https://github.com/dingguanliang/mksetuppack/blob/master/README_CH.md)
 [**English**](https://github.com/dingguanliang/mksetuppack/blob/master/README.md)  
+[**中文版本**](https://github.com/dingguanliang/mksetuppack/blob/master/README_CH.md)
 
 ---
 
-# Project name: make setup package
+# linux基于shell安装包制作工具——mksetuppack
 
 ---
 
-**Descript:** create program setup package, which include setup shell script and target compress package. All in one file
+**描述:** 将安装脚本与安装文件打包在一个bin文件的工具，支持自动EULA文件，支持自定义脚本进行二次安装。
 
-**Version:** 1.0.0
+**版本:** 1.0.0
 
 
-**Author:** john.ding
+**作者:** 丁观亮
 
-**Email:** 343399208@qq.com
+**邮箱:** 343399208@qq.com
 
 ---
 
-## usage:
+## 使用方法:
 
-**step1:** pack setup package.
+**第一步：** 打包安装脚本、安装文件、安装文件的EULA与xsetup.sh。
 ```
 ./build.sh <EULA file path> <target directry path>
 ```
-**step2:** copy ./output/setup.bin to any linux host.  
-**step3:** run setup.bin in target host.
+**第二步:** 拷贝生成的setup.bin文件到任意linux主机。
+**第三步:** 在目标主机运行setup.bin。
 ```
 ./setup.bin <install directy>
 ```
-***Options:***  
-    You can create a xsetup.sh file in target directry path, it is setup target second times.
-***Tips:***  
-    EULA is End User Licence Agreement;
+**可选项:**  
+你可以手动添加xsetup.sh到./input/examplePROJ/下，用来支持目标文件的二次安装。
+**说明:**  
+EULA是用户协议许可。
 
 ---
 
-## example:  
-**step1:** modify xsetup.sh file.
+## 示例:  
+**第一步:** 修改xsetup.sh文件，用来支持二次安装。
 ```
 ┌john@ubuntu ~/t/mksetuppack
 └> vim ./input/examplePROJ/xsetup.sh
 ```
-content is below:
+xsetup.sh修改后的内容如下:
 ```
 #!/bin/bash -e
 
@@ -57,7 +57,7 @@ echo "exit xsetup.sh!"
 
 exit 0
 ```
-**step2:** create setup package.
+**第二步:** 创建安装包。
 ```
 ┌john@ubuntu ~/t/mksetuppack
 └> ./build.sh ./input/exampleEULA ./input/examplePROJ/
@@ -68,14 +68,14 @@ EULA.tgz size is 12336
 target.tgz size is 60075
 end build!
 ```
-**step3:** copy setup.bin to any linux host, below is a test case.
+**第三步:** 拷贝setup.bin到任意linux主机，下来是个测试的例子。
 ```
 ┌john@ubuntu ~/t/mksetuppack
 └> cp ./output/setup.bin ~/tmp/
 ┌john@ubuntu ~/t/mksetuppack
 └> cd ~/tmp
 ```
-**step4:** run setup.bin in target host.
+**第四步:** 在目标主机运行setup.bin。
 ```
 ┌john@ubuntu ~/tmp
 └> ./setup.bin /temp/
@@ -146,7 +146,7 @@ enter xsetup.sh!
 setup...
 exit xsetup.sh!
 ```
-**step5:** check install path.
+**第五步:** 检查目标文件是否安装成功。
 ```
 ┌john@ubuntu ~/tmp
 └> ls /temp/
