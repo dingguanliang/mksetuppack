@@ -1,4 +1,4 @@
-[**English**](https://github.com/dingguanliang/mksetuppack/blob/master/README.md)  
+[**English**](https://github.com/dingguanliang/mksetuppack/blob/master/README.md)
 [**中文版本**](https://github.com/dingguanliang/mksetuppack/blob/master/README_CH.md)
 
 ---
