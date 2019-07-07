@@ -83,7 +83,8 @@ Welcome to examplePROJ
 
 You need to read and accept the EULA before continue..
 
-Unpacking EULA file ..LA_OPT_BASE_LICENSE v26 June 2018
+Unpacking EULA file ..
+LA_OPT_BASE_LICENSE v26 June 2018
 
 
 

@@ -1,9 +1,9 @@
 #!/bin/bash -e
 
 projname=examplePROJ
-setupshlines=121
-EULAsizes=12336
-targetsizes=60075
+setupshlines=122
+EULAsizes=12335
+targetsizes=60071
 
 if [ $# == 1 ]; then
     insdir=$1
@@ -77,6 +77,7 @@ if [ -z "$noask" ]; then
     echo -n "Unpacking EULA file "
     offset=`head -n $setupshlines "$0" | wc -c | tr -d " "`
     if _dd "$0" $offset $EULAsizes | _unpack x | _progress; then
+        echo
         cat $insdir/EULA | more -d
         echo -n "Do you accept the EULA you just read? (y/N) "
         read REPLY
